@@ -39,7 +39,7 @@ router.post('/upload', isLoggedIn, upload.single("file"), async function(req, re
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', {error: req.flash('error')});
+  res.render('login');
 });
 
 router.get('/profile', isLoggedIn, async function(req, res, next) {
