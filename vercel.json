@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "name": "pinterest-clone",
     "builds": [
         {
             "src": "./routes/index.js",
@@ -9,7 +10,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "/routes/index.js"
         }
     ]
 }
