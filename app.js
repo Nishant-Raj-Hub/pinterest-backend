@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+
 const expressSession = require('express-session');
 const flash = require("connect-flash");
 var path = require('path');
@@ -9,8 +10,18 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const passport = require('passport');
+const mongoose  = require('mongoose');
 
 var app = express();
+
+mongoose.connect('mongodb+srv://noddy:noddy@cluster0.zwio6op.mongodb.net/', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log('Connection to MongoDB successful');
+}).catch((err) => {
+  console.log('Connection to MongoDB failed');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
